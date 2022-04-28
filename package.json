@@ -1,0 +1,23 @@
+{
+  "name": "create-notes",
+  "version": "1.0.0",
+  "description": "Application for taking and saving notes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allysonnostrand/create-notes.git"
+  },
+  "author": "Ally Nostrand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allysonnostrand/create-notes/issues"
+  },
+  "homepage": "https://github.com/allysonnostrand/create-notes#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
