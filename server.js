@@ -27,17 +27,18 @@ app.get("/notes", (req, res) =>{
 app.get("/api/notes", (req, res) =>{
     res.json(notes);
 })
+
 /* post request for notes---------------------*/
 app.post("/api/notes", (req, res) =>{
     res.json(notes);
-    // const newNote = {
-    //     title: req.body.title,
-    //     text: req.body.text,
-    //     id: uuidv4()
-    // }
 
-    // res.json(newNote)
-    notes.push(req.body)
+    /* add unique id to notes*/
+    const newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        id: uuidv4()
+    }
+    notes.push(newNote);
 })
 
 /* listening to port--------------------------------*/
