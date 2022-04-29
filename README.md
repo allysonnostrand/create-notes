@@ -22,7 +22,32 @@ To run this application make sure to download the npm package express along with
 
 ## Usage
 
+Bellow I have provided screenshots to demonstrate the functionality of the application.
 
+Here is what the application looks like upon loading.
+
+<img src = "./public/assets/images/create-notes-sc-1.png">
+
+
+When the user clicks get started, the route is changed to /notes and notes.html gets sent.
+
+<img src = "./public/assets/images/create-notes-sc-2.png">
+
+Here the user is free to start typing out their first note!
+
+<img src = "./public/assets/images/create-notes-sc-3.png">
+
+Once the user has typed out their note, they can hit the save icon (only is displayed after entering a title!) to save their note. Upon hitting save, the users note will pop up in the notes section on the left!
+
+<img src = "./public/assets/images/create-notes-sc-4.png">
+
+The user can view their saved notes by clicking on the title of saved note. 
+
+<img src = "./public/assets/images/create-notes-sc-5.png">
+
+When the user is ready to create a new note they can hit the plus icon at the top right!
+
+<img src = "./public/assets/images/create-notes-sc-6.png">
 
 ## License
 
