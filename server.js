@@ -1,10 +1,12 @@
-const { json } = require('express');
 const express = require('express');
 const fs = require('fs');
 const app = express();
 const path = require('path')
 const notes = require('./db/db.json');
 const PORT = process.env.PORT || 3001;
+
+/* uuid produces random id*/
+const { v4: uuidv4 } = require('uuid');
 
 /* middleware--------------------------------------*/
 app.use(express.urlencoded({extended: true}));
@@ -22,17 +24,21 @@ app.get("/notes", (req, res) =>{
 })
 
 /* acessing notes database--------------------------*/
-app.get("/api/notes", (req,res) =>{
+app.get("/api/notes", (req, res) =>{
     res.json(notes);
 })
 /* post request for notes---------------------*/
-app.post("/api/notes"), (req,res) =>{
-    fs.readFile('/db/db.json', "utf-8",(data) =>{
-        JSON.parse(data);
-        path.join(__dirname, '/db/db.json');
-        notes.push(req.body);   
-    })
-}
+app.post("/api/notes", (req, res) =>{
+    res.json(notes);
+    // const newNote = {
+    //     title: req.body.title,
+    //     text: req.body.text,
+    //     id: uuidv4()
+    // }
+
+    // res.json(newNote)
+    notes.push(req.body)
+})
 
 /* listening to port--------------------------------*/
 app.listen(PORT, () =>{
