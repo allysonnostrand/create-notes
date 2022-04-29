@@ -30,15 +30,30 @@ app.get("/api/notes", (req, res) =>{
 
 /* post request for notes---------------------*/
 app.post("/api/notes", (req, res) =>{
-    res.json(notes);
+    const save = path.join(__dirname, '/db/db.json')
+    fs.readFile('./db/db.json', 'utf-8', (err,data) =>{    
+        if(err){
+            throw err
+        } else {
+        // const notes = JSON.parse(data);
 
-    /* add unique id to notes*/
-    const newNote = {
-        title: req.body.title,
-        text: req.body.text,
-        id: uuidv4()
-    }
-    notes.push(newNote);
+        /* add unique id to notes*/
+        const newNote = {
+            title: req.body.title,
+            text: req.body.text,
+            id: uuidv4()
+        }
+        
+    notes.push(newNote); 
+    fs.writeFile(save, JSON.stringify(notes), (err,data) =>{
+        if(err){
+            throw err
+        } else {
+            res.json(newNote)
+        }
+    })
+        }
+    })
 })
 
 /* listening to port--------------------------------*/
