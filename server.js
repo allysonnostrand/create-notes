@@ -35,23 +35,21 @@ app.post("/api/notes", (req, res) =>{
         if(err){
             throw err
         } else {
-        // const notes = JSON.parse(data);
-
-        /* add unique id to notes*/
-        const newNote = {
-            title: req.body.title,
-            text: req.body.text,
-            id: uuidv4()
-        }
+            /* add unique id to notes*/
+            const newNote = {
+                title: req.body.title,
+                text: req.body.text,
+                id: uuidv4()
+            }
         
-    notes.push(newNote); 
-    fs.writeFile(save, JSON.stringify(notes), (err,data) =>{
-        if(err){
-            throw err
-        } else {
-            res.json(newNote)
-        }
-    })
+            notes.push(newNote); 
+            fs.writeFile(save, JSON.stringify(notes), (err,data) =>{
+                if(err){
+                    throw err
+                } else {
+                    res.json(newNote)
+                }
+            })
         }
     })
 })
